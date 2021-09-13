@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Jorge Gallego">
+        <meta name="title" content="Notes App">
+        <meta name="keywords" content="">
+        <meta name="description" content="">
+        <title>Notes App</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Raleway:wght@600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="index.css">
+        <script src="https://unpkg.com/vue@next"></script>
+    </head>
+    <body>
+        <h1>Notes</h1>
+        <section id="notes">
+            <input type="text" v-model="newNoteTitle">
+            <input type="text" @keydown="changeButtonTitle" v-model="newNoteBody">
+            <button @click="addNote" :disabled="!newNoteBody" :title="buttonTitle">Add note</button>
+            <div class="notes">
+                <aside class="note" v-for="(note, index) in notes" @click="removeNote(index)" title="Delete note">
+                    <h2>{{ note.title }}</h2>
+                    <p>{{ note.body }}</p>
+                </aside>
+            </div>
+        </section>
+        <script src="index.js"></script>
+    </body>
+</html>
