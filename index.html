@@ -18,8 +18,8 @@
     <body>
         <h1>Notes</h1>
         <section id="notes">
-            <input type="text" v-model="newNoteTitle">
-            <input type="text" @keydown="changeButtonTitle" v-model="newNoteBody">
+            <input type="text" v-model="newNoteTitle" placeholder="Note Title">
+            <input type="text" @keydown="changeButtonTitle" v-model="newNoteBody" placeholder="Note Body">
             <button @click="addNote" :disabled="!newNoteBody" :title="buttonTitle">Add note</button>
             <div class="notes">
                 <aside class="note" v-for="(note, index) in notes" @click="removeNote(index)" title="Delete note">
