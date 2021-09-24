@@ -86,3 +86,14 @@ button:not(:disabled)
         width: calc(45%);
     }
 }
+@media screen and (max-width: 550px)
+{
+    input
+    {
+        width: 70%;
+    }
+    .note
+    {
+        width: calc(80%);
+    }
+}
